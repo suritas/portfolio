@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--HEAD: NAME OF PAGE AND REFERENCE TO CSS STYLESHEET-->
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+				<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160395307-1"></script>
+				<script>
+				  window.dataLayer = window.dataLayer || [];
+				  function gtag(){dataLayer.push(arguments);}
+				  gtag('js', new Date());
+				  gtag('config', 'UA-160395307-1');
+				</script>
+
+		<!-- Other Head content -->
+		<meta charset="UTF-8">
+		<title>Contact</title>
+		<link rel="stylesheet" type="text/css" href="css/html5reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:200&display=swap" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=DM Serif Display' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+		<link rel="shortcut icon" type="image/png" href=images/starfish2.png>		<link rel="shortcut icon" type="image/png" href=images/starfish2.png>
+	</head>
+	<!-- BODY & NAV -->
+		<a id="top"></a><!-- for the button to go to top -->
+		<body>
+			<div class="bg">
+			<header>
+				<button id="backtotopbutton">
+					<a href="#top">
+						<img src="images/uparrow.svg" alt="uparrow"/>
+					</a>
+				</button>
+			<div class="skip">
+				<a href="#main">Skip to Main Content</a>
+			</div>
+			<!-- <img src="images/starfish3.png" alt="logo" id = "logo"> -->
+			<div id="inside-header">
+				<h1 id = "suritaux">SURITA SPIGNER</h1>
+				<nav id = "nav">
+					<ul>
+						<li class="index"><a  href = index.html> Projects </a></li>
+						<li class="resume"><a href = resume.html> Resume </a></li>
+						<li class="about"><a href = about.html> About </a></li>
+						<li class="contact"><a class="current" href = contact.html> Contact </a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main id="main">
+			<div id = "contact-outer-container">
+				<div id="contact-container">
+					<div id="contact-alwaysrow-container">
+						<img src="images/contactimagegreen.png" alt="contact cartoon profile pic" id = "contact-image">
+						<div>
+							<h4>Interested in working together? </h4>
+							<h3>Email me at suspigner@gmail.com</h3>
+							<div id="about-text">
+								<p>Whether your next project involves understanding a new user-base, prototyping for the the next release, or re-assessing your company's UX strategy, I'd love to connect with you. I'm here to listen and help make your next project meaningful, intuitive, & enjoyable for your users. </p>
+							</div>
+						</div>
+					</div>
+
+					<!-- contact form -->
+					<div class="form-container">
+						<form action="https://formspree.io/xayoando" method="POST">
+
+		<!-- name -->
+									<label for="name">Name</label>
+									<input type="text" name="name" placeholder="Full Name..." id="name"/>
+		<!-- email -->
+									<label for="email" id="email-label">Email</label>
+									<input type="email" name="_replyto" placeholder="Your Email..." id="email"/>
+
+		<!-- subject -->
+									<label for="subject">Subject</label>
+									<input type="text" name="subject" placeholder="Subject..." id="subject"/>
+		<!-- Message -->
+									<label for="message">Message</label>
+									<textarea name="message" placeholder="Your message here.." id="message"></textarea>
+
+								<input type="submit" value="Send" id= "submit-button"/>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		<!-- closing contact-outer container -->
+		</main>
+		<footer>
+			<p>Copyright &copy; 2020 Surita Spigner, M.S. </p>
+
+			<p id="footerquote">“Supposing is good, but finding out is better.” — Mark Twain</p>
+			<!-- <div class="mobilefooter"> Current Display: Mobile</div>
+			<div class="tabletfooter"> Current Display: Tablet</div>
+			<div class="desktopfooter"> Current Display: Desktop</div> -->
+		</footer>
+	</div>
+	</body>
+</html>
