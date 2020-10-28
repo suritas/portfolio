@@ -1,0 +1,1663 @@
+/* -----GLOBAL VARS----- */
+:root {
+--ballstopx: 200px;
+/* main colors */
+
+--color1: #99CC33;/* GREEN for WAVE Orig:#99CC33*/
+--color2: #F9A764;/* PINK for WAVE Orig:#F9A764*/
+--colordark: #3a3e49;
+--lightblue: #60D4E4;
+--darkblue: #52B8BF;
+--transparentcolor1: #99CC331F;
+--transparentcolor2: #F9A7647F;
+/* fonts */
+--font1: 'Montserrat', sans-serif;
+--font2: 'Raleway', sans-serif;
+--font3: 'DM Serif Display', serif;
+--fontcode:'Cutive Mono', serif;
+}
+/*Citation for root: use: https://www.w3schools.com/css/css3_variables.asp */
+
+/* SKIP TO CONTENT */
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  /* slides down from above */
+  -webkit-transition: top 1s ease-out;
+  -moz-transition: top 1s ease-out;
+  -o-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  /*to keep the "skip to content" button above page */
+  position: absolute;
+  top: -500px;
+}
+/* Focus has border, and begins as Skip to Content in the upper left */
+.skip a:focus {
+  position: absolute;
+  border: 2px solid black;
+  top: 0;
+  left: 0;
+}
+
+/* NO captions on gallery images on super small mobile screens */
+@media all and (max-width: 570px){
+.gallery > p{
+  display: none;
+}
+}
+
+/* SCROLL TO TOP BUTTON */
+html{
+  scroll-behavior: smooth;
+}
+html {
+  /* background: url(../images/backgroundwaveblue.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+}
+/*Go to top button*/
+#backtotopbutton {
+    position: fixed;
+    z-index:99;
+    background: none;
+    border: none;
+    /* color: white; */
+    bottom: 80px;
+    right: 30px;
+    /* max-width: 30px; */
+    width: 50px;
+    height:50px;
+    /* font-size: 12px;
+    border-color: rgba(85, 85, 85, 0.2);
+    background-color: rgb(100,100,100);
+    padding: .5px;
+    border-radius: 4px; */
+}
+#backtotopbutton:hover {
+    background-image:url(../images/uparrowbackground.svg);
+    background-repeat: no-repeat;
+}
+
+/* BODY & sections*/
+body{
+  font-family: var(--font1);
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.2em;
+  font-size: 2em;
+  text-decoration: none;
+  letter-spacing: .06em;
+}
+.bg{
+  background-image: url(../images/greenwavestripe.png);
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax effect */
+}
+/* #image6:hover:before {
+        content:'';
+		    position: absolute;
+		    display: block;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    z-index: -1;
+            background-image: url(../images/backgroundwaveblue.png);
+            background-size: contain;
+            background-position: bottom;
+            background-repeat: no-repeat;
+} */
+
+main{
+  margin: 30px;
+  min-height: calc(100vh - 248px);
+  /* SO FOOTER STAYS AT BOTTOM (minusing a higher px moves it up, minusing a lower one moves it down) */
+}
+
+/*Keyframes for logo bounce animation*/
+@-webkit-keyframes bounce {
+  0% {-webkit-transform: translateY(-100px);}
+  10%, 30%, 50%, 100% {-webkit-transform: translateY(0);}
+  20% {-webkit-transform: translateY(-20px);}
+  40% {-webkit-transform: translateY(-5px);}
+  60% {-webkit-transform: translateY(-2px);}
+}
+@-moz-keyframes bounce {
+ 0% {-webkit-transform: translateY(-100px);}
+ 10%, 30%, 50%, 100% {-webkit-transform: translateY(0);}
+ 20% {-webkit-transform: translateY(-20px);}
+ 40% {-webkit-transform: translateY(-5px);}
+ 60% {-webkit-transform: translateY(-2px);}
+}
+@-o-keyframes bounce {
+ 0% {-webkit-transform: translateY(-100px);}
+ 10%, 30%, 50%, 100% {-webkit-transform: translateY(0);}
+ 20% {-webkit-transform: translateY(-20px);}
+ 40% {-webkit-transform: translateY(-5px);}
+ 60% {-webkit-transform: translateY(-2px);}
+}
+@keyframes bounce {
+ 0% {-webkit-transform: translateY(-100px);}
+ 10%, 30%, 50%, 100% {-webkit-transform: translateY(0);}
+ 20% {-webkit-transform: translateY(-20px);}
+ 40% {-webkit-transform: translateY(-5px);}
+ 60% {-webkit-transform: translateY(-2px);}
+}
+/* Citation Bounce:https://www.tutorialspoint.com/css/css_animation_bounce.htm */
+#logo, #resumelogo{
+ position: relative;
+ /* first make a NAME for the animation above */
+ -webkit-animation-name: bounce;
+ -moz-animation-name: bounce;
+ -o-animation-name: bounce;
+ animation-name: bounce;
+ /* DURATION */
+ -webkit-animation-duration: 2s;
+ -moz-animation-duration: 2s;
+ -o-animation-duration: 2s;
+ animation-duration: 2s;
+ /* # of times/SO IT DOESNT REPEAT */
+ -webkit-animation-iteration-count: 1;
+ -moz-animation-iteration-count: 1;
+ -o-animation-iteration-count: 1;
+ animation-iteration-count: 1;
+ /* Stays in final position */
+ -webkit-animation-fill-mode: forwards;
+ -moz-animation-fill-mode: forwards;
+ -o-animation-fill-mode: forwards;
+ animation-fill-mode: forwards;
+}
+#logo{
+  height: 100px;
+  padding-top: 50px;
+}
+#resumelogo{
+  height:20px;
+  margin-top: 50px;
+  margin-bottom:0px;
+}
+
+#suritaux{
+  position: relative;
+  font-size: 50px;
+  text-align: center;
+  padding-bottom: 30px;
+  text-decoration: none;
+  color:var(--colordark);
+}
+
+header{
+  border-bottom: 3px solid var(--color1);
+  margin: 30px;
+  padding: 10px;
+  position: relative;
+}
+#inside-header{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+nav a{
+  font-size:11px;
+  color:var(--colordark);
+  background-color: transparent;
+  text-decoration: none;
+  padding: 5px 10px 5px 10px;
+}
+nav a:hover, nav a:focus{
+  color:white;
+  background-color:var(--colordark);
+  /* border: 2px solid black; */
+  padding: 5px 10px 5px 10px;
+  transition: .5s ease-in;
+  outline: none; /* no default blue border when in focus */
+}
+
+nav ul{
+  display:flex;
+  flex-direction: column;  /*DIRECTION MOBILE ONLY */
+  padding-bottom: 10px;
+}
+nav li{
+text-align: center;
+}
+.current {
+font-weight: bold;
+/* background-color: var(--transparentcolor2); */
+border: .2px solid var(--transparentcolor2);
+/* I removed padding bc otherwise it shifts when hovered */
+/* padding: 4px 9px 4px 9px; */
+}
+
+/*Nav Dropdown */
+#nav a {
+  display: block;
+}
+#nav > ul > li ul {
+  display:flex;
+  flex-direction: row;  /*DIRECTION MOBILE ONLY */
+}
+/* Citation dropdown no float:https://stackoverflow.com/questions/32521032/how-to-create-dropdown-navigationbar-without-float */
+
+
+
+/* UX TEXT ANIMATION */
+/* animation: [animation-name] [animation-duration] [animation-timing-function]
+[animation-delay] [animation-iteration-count] [animation-direction]
+[animation-fill-mode] [animation-play-state]; */
+
+.uxanimation1 {
+  /* display: inline-block; */
+  text-align: center;
+	justify-content:center;
+  align-items: center;
+  font-family: var(--font3);
+  color: var(--color2);
+  font-weight: bold;
+  font-size: 30px;
+  padding-top:50px;
+  letter-spacing: 1.7px;
+  line-height: 1.7;
+}
+.underline{
+  text-decoration: underline;
+}
+.UX1, .X1 {
+  /* margin: 0 15px; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* display: inline-flex; */
+  animation: hidtovis 2s ease 0s 1 alternate forwards;
+  width: 70vw;
+
+}
+
+
+@keyframes hidtovis {
+	0%{opacity:0;}
+  100%{opacity:.9;color:#3a3e49}
+}
+
+.gallery{
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+justify-content: center;
+margin: 30px 50px 0px 50px;
+padding-top: 5vh;
+padding-bottom: 5vh;
+/* background-color: white; */
+/*background-image: url(../images/beach-palms.jpg); */
+background-attachment: fixed; /* Parallax effect */
+background-position: right;  /* Parallax effect */
+background-repeat: no-repeat; /* Parallax effect */
+background-size: cover;       /* Parallax effect */
+}
+.gallery > a{
+border: 4px var(--transparentcolor2) solid;
+color: var(--colordark);   /* for WAVE */
+text-decoration: none;  /* for WAVE */
+text-align: center;  /* for WAVE */
+margin-right:10px;
+margin-left: 10px;
+margin-top:10px;
+margin-bottom: 10px;
+width: 100px;
+height:100px;
+}
+
+.gallery > p{
+/* border: 4px var(--transparentcolor2) solid; */
+color: var(--colordark);   /* for WAVE */
+font-size: 10px;  /* for WAVE */
+text-decoration: none;  /* for WAVE */
+text-align: center;  /* for WAVE */
+margin-right:15px;
+margin-left: 15px;
+margin-top:10px;
+margin-bottom: 50px;
+width: 100px;
+line-height: 1.4;
+align-self: flex-start;
+text-transform: uppercase;
+/* height:100px; */
+}
+
+
+
+
+
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+.gallery a:hover{
+border: 4px var(--colordark) solid;
+/* transition: all 300ms ease; */
+transform: scale(1.02);
+box-shadow: 0 4px 8px 0 grey;
+}
+
+footer{
+background-color: black;
+font-size: 10px;
+line-height: 1.8;
+padding:10px;
+/* line-height: 2;
+    padding: 10px; */
+color: white;
+margin: 0px;
+text-align: center;
+}
+#footerquote{
+  font-style: italic;
+}
+
+.desktopfooter, .tabletfooter{
+  display: none;
+}
+.mobilefooter{
+  display: block;
+}
+
+/* mag */
+#smalldesktopmag,#largedesktopmag, #tabletmag{
+  display: none;
+}
+#mobilemag{
+  display: block;
+}
+
+/* --------------------------------WELCOME ONLY--------------------------------------- */
+
+#image1, #image2, #image3, #image4, #image5, #image6 {
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+#image1{
+background-image: url(../images/cnbc-logo.png);
+}
+#image2{
+background-image: url(../images/evva-logo.png);
+}
+#image3{
+background-image: url(../images/traveler-logo.png);
+}
+#image4{
+background-image: url(../images/fsslogo.png);
+}
+#image5{
+background-image: url(../images/justfutureslogo2.png);
+}
+#image6{
+background-image: url(../images/amazon-logo.png);
+}
+
+/* Hover gallery */
+/* #image1:hover{
+background-image: url(../images/Asset1.png);
+}
+#image2:hover{
+background-image: url(../images/iphone_x-evva.png);
+}
+#image3:hover{
+background-image: url(../images/traveler-iphone.png);
+}
+
+#image4:hover{
+background-image: url(../images/fsslogo.png);
+}
+#image5:hover{
+background-image: url(../images/justfutureslogo2.png);
+}
+#image6:hover{
+background-image: url(../images/amazon-logo.png);
+} */
+
+/* --------------------------------PROCESS ONLY--------------------------------------- */
+
+.top-flexcontainer{
+display:flex;
+flex-direction: column;
+align-items:center;
+flex-wrap: wrap;
+justify-content: center;
+margin: 30px;
+}
+#cnbcphone{
+  width:100%;
+  align-self: center;
+}
+.projecttitle-after{
+  display:none;
+}
+
+/* PROJECT TITLE */
+.projecttitle-regular{
+  width: 100%;
+  align-self: center;
+  text-align: left;
+  color: var(--colordark);
+  font-family: var(--font1);
+  font-size:3vh;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+
+.projecttitle-before, .projecttitle-after{
+  width: 100%;
+  align-self: center;
+  font-size: 4vw;
+  font-weight:bold;
+  line-height: 1;
+  position: relative;
+  font-family: var(--font2);
+  /* display: inline-block; */
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;      /* MOBILEONLY */
+  /* Color fallback */
+  color: var(--colordark);
+  /* -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -o-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-image: url(../images/cnbcbackground.png); */
+  /* background-attachment: fixed; /* Parallax effect */
+  /* background-position: right;  /* Parallax effect */
+  /* background-repeat: no-repeat; /* Parallax effect */
+  /* background-size: cover;       /* Parallax effect */
+}
+
+/* Change the background position to display letter when the black zone isn't here */
+/* .projecttitle-before--no-textzone:before, .projecttitle-after-no-textzone:before {
+  background-position: -.75em 0;
+} */
+/* .projecttitle-before--no-textzone:after, .projecttitle-after-no-textzone:after  {
+  content: none;
+} */
+/* Use Background-size cover for photo background and no-repeat background */
+/* .projecttitle-before--cover,.projecttitle-before--cover:before,
+.projecttitle-after--cover, .projecttitle-after--cover:before {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+} */
+/* CITATION: Background image text effect https://codepen.io/Jintos/pen/crlxk */
+
+
+/* DESCRIPTION BELOW CONTAINER */
+.top-description,.top-description-left{
+  color: var(--colordark); /* make contrast */
+  font-family: var(--font2);
+  font-size: 16px;
+  line-height: 1.7em;
+  text-align: center;
+  font-style: italic;
+  margin-top:40px;
+  margin-bottom: 55px;
+}
+.top-description-left{
+  text-align: left;
+  margin-left:30px;
+  margin-top:0px;
+  margin-bottom: 80px;
+}
+
+/* STEPS */
+.container{
+  display: grid;
+  grid-column: 1fr;
+  grid-row-gap: 10px;
+  padding-top:25px;
+  padding-bottom:15px;
+}
+.stepcontent{
+  padding:50px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.stepcontent p {
+  padding-left: 20px;
+  padding-top: 10px;
+  font-size: 16px;
+}
+/* step content flexed with image */
+.step-flexcontainer{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.stepcontent-before{
+  padding:0px;
+}
+
+.step-fleximage{
+  /* box-shadow: 0 4px 8px 0 grey; */
+  display: block;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65vw;
+  padding: 20px;
+}
+.flex-gallery{
+display:flex;
+align-items:left;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: left;
+}
+.small-flex-paragraph{
+  display: inline-block;
+}
+.small-step-fleximage{
+  box-shadow: 0 4px 8px 0 grey;
+  display: inline-block;
+  margin-top: 15px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  width: 10vw;
+}
+
+.bold{
+  font-weight: bold;
+  color: var(--colordark);
+}
+/* scope*/
+#sc-container, #sc-inner-container, #bs-inner-container1, #bs-inner-container-ft{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#sc-pic-before, .affin-pic-before, .amz-pic-before{
+  width:100%;
+  align-self: center;
+  margin:20px;
+}
+#sc-text-before{
+  width:100%;
+  margin:20px;
+}
+
+#sc-text-before ul li, #sc-text-before ol li{
+  font-family: var(--font1);
+  font-weight: 300;
+  font-style: normal;
+  line-height: 2em;
+  font-size: 16px;
+  text-decoration: none;
+  letter-spacing: .06em;
+}
+
+/* design reqs*/
+#dr-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#dr-pic-after{
+  align-self: center;
+  margin: 10px;
+  width: 35vw;
+  height: auto;
+}
+#dr-pic-before{
+  width:100%;
+  align-self: center;
+}
+#dr-text-before{
+  width:100%;
+  font-size: 13px;
+}
+#priority{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* brainstorming */
+#bs-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#bs-text-before{
+  width:100%;
+  font-size: 13px;
+}
+#bs-pic-after{
+  align-self: center;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+}
+#bs-pic-after-small{
+  align-self: center;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+}
+
+
+
+#quote, #quote-fss, #quote-amazon {
+  font-family: var(--font2);
+  font-style: italic;
+  font-weight: bold;
+  color: darkgrey;
+  text-align: center;
+  padding-left: 30px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+#quote-fss{
+  text-align: left;
+  padding:0px;
+  padding-left: 70px;
+  padding-top: 10px;
+}
+#quote-amazon{
+  font-family: var(--fontcode);
+  text-align: left;
+  padding:0px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+#researchq1, #researchq2{
+  font-family: var(--font2);
+  font-weight: bold;
+  color: lightgrey;
+  line-height: 2em;
+  text-align: center;
+  padding-left: 30px;
+  padding-top: 20px;
+  font-size: 25px;
+}
+#researchq2{
+  color: darkgrey;
+}
+
+#feature-title{
+  font-weight: bold;
+  color: var(--color2);
+  text-align: center;
+  padding-top: 90px;
+  font-size: 25px;
+}
+
+
+
+
+/* family traveler prototypes */
+.phonegif{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40vw;
+}
+.tvgif{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+}
+
+/* evva prototypes */
+.miniphonegif{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15vw;
+  padding:75px;
+}
+.threephones{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  padding:30px;
+}
+
+
+
+
+/* bold top of bullet list */
+.subtitle {
+  padding-top:2vh;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--color1);
+}
+
+
+/* combo of bullet and bold top part */
+.stepcontent ul, .stepcontent ol{
+  padding-left: 80px;
+  line-height: normal;
+  font-size: 13px;
+  color: var(--colordark);
+}
+/* bullet part */
+.stepcontent li{
+  padding-top: 1vw;
+}
+.stepcontentborder{
+  background-color: white;
+  border: 5px solid var(--transparentcolor1);
+  margin:30px;
+  -webkit-background-clip: padding-box; /* Safari */
+  -moz-background-clip: padding-box;
+  -o-background-clip: padding-box;
+  background-clip: padding-box; /* IE9+, Firefox 4+, Opera, Chrome
+  /* Citation:transparent border webkit:https://stackoverflow.com/questions/4062001/can-you-set-a-border-opacity-in-css */
+}
+.steptitle{
+color:var(--color1);
+font-size:3vh;
+font-family: var(--font1);
+background-color: white;
+font-weight: bold;
+text-transform: uppercase;
+}
+.step1, .step2, .step3, .step4, .step5, .step6, .step7, .step8{
+  font-size:10vh;
+  font-weight: bold;
+  font-family: var(--font2);
+  text-align: center;
+  color:lightgrey;
+  z-index:-.5;
+  line-height: normal;
+}
+
+/* FLIPCARDS */
+.flip-card {
+  background-color: transparent;
+  /* height: 40vw; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 10vw;
+  height: 20vw;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+/* FLIPCARD IMAGES (height MUST STAY SAME AS FLIPCARD) */
+.livetv, .sec15, .cc, .ybar{
+width: 100%;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,4);
+}
+
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+-webkit-transition: transform 0.6s;
+-moz-transition: transform 0.6s;
+-o-transition: transform 0.6s;
+transition: transform 0.6s;
+transform-style: preserve-3d;
+}
+.figstate{
+  text-align: center;
+  font-weight: bold;
+  /* padding-top: 10px; */
+  font-size: 10px;
+}
+/* different figstate colors front and back */
+.flip-card-back {
+-webkit-transform: rotateY(180deg);
+-moz-transform: rotateY(180deg);
+-o-transform: rotateY(180deg);
+transform: rotateY(180deg);
+-webkit-animation-name: rotateY(180deg);
+-moz-animation-name: rotateY(180deg);
+-o-animation-name: rotateY(180deg);
+animation-name: rotateY(180deg);
+color: var(--color1);
+}
+.flip-card-front {
+color: grey;
+}
+/* both focus and hover so that accessible for focus only ppl */
+.flip-card:hover .flip-card-inner, .flip-card:focus .flip-card-inner {
+-webkit-transform: rotateY(180deg);
+-moz-transform: rotateY(180deg);
+-o-transform: rotateY(180deg);
+transform: rotateY(180deg);
+
+}
+.flip-card-front, .flip-card-back {
+position: absolute;
+background-color: transparent;
+width: 100%;
+height: 100%;
+/* so orig and redesign dont overlap */
+-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+-o-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+/* Flipcard Citation:https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card */
+/* FLIPCARD RESIZE */
+/* --------------------------------FSS ONLY--------------------------------------- */
+
+
+
+
+
+/* --------------------------------MSC ONLY--------------------------------------- */
+
+
+
+
+
+
+
+/* --------------------------------AMAZON ONLY--------------------------------------- */
+
+
+
+
+
+
+/* --------------------------------RESUME ONLY--------------------------------------- */
+.minilogo{
+  margin-top: 0px;
+  text-align: center;
+}
+
+/* link display */
+.minititle-resume,.minititle-resume a:visited, .minititle-resume a:link {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 75px;
+  margin-bottom: 50px;
+  text-decoration: none;
+  color:var(--lightblue);
+  line-height: .7em;
+  font-weight:bold;
+}
+/* mouse over and select link */
+.minititle-resume a:hover, .minititle-resume a:active {
+  color:var(--darkblue);
+}
+
+#resumeimage{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height:auto;
+  width:70vw;
+}
+/* #resumebackground{
+  margin: 30px 50px 0px 50px;
+  padding-top: 12vh;
+  padding-bottom: 15vh;
+  background-image: url(../images/Asset4.png);
+*/
+
+
+#iframe-resume{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-image:url(../images/beach-palms.jpg)
+  /* margin-top: 50px; */
+  /* margin-bottom: 50px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+  width: 55vw;
+  height: 120vh;
+
+}
+/* --------------------------------REDESIGN ONLY--------------------------------------- */
+/*Magnifier*/
+.magnifier {
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px 0 grey;
+  display: block;
+  margin-top:20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dot{
+  height:15px;
+}
+/* style for the DIV that is the magnifier lens */
+.maglens {
+  position: absolute;
+  overflow: hidden;
+  width: 300px;
+  height: 200px;
+}
+
+/* style for the small IMG that appears on the page */
+.magsmall {
+  position: absolute;
+  border-style: none;
+}
+
+/* style for the magnified image, using a clip rectangle */
+.maglarge {
+  position: absolute;
+  border-style: none
+}
+/* --------------------------------ABOUT ONLY--------------------------------------- */
+#about-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+#profile-pic-before{
+  width: 100%;
+  align-self: center;
+}
+#about-text{
+  width:100%;
+  font-size: 13px;
+  padding-left:30px;
+}
+#about-text h2{
+  font-family: var(--font3);
+  color: var(--colordark);
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  padding-bottom: 10px;
+}
+
+#contact-container #about-text{
+  margin-top:10px;
+  margin-right:0px;
+}
+#contact-alwaysrow-container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+#profile-pic-after{
+  display:none;
+}
+.quotes{
+  padding: 50px;
+}
+.recco-bold, .recco-quote, .recco-person{
+  text-align: center;
+  /* color:grey; */
+  font-style: italic;
+  line-height: inherit;
+  font-size: 13px;
+}
+.recco-quote{
+    padding: 80px;
+}
+.recco-bold{
+  font-weight: bold;
+  padding: 0px;
+}
+.recco-person{
+    font-style: normal;
+    font-weight: bold;
+    color: darkgrey;
+    padding-top:15px;
+}
+#contact-image{
+  display: none;
+}
+
+/* Contact Me! */
+h4, h3{
+  font-size: 30px;
+  font-family: var(--font3);
+  letter-spacing: 1.5px;
+  line-height: 1;
+  color: var(--color1);
+  text-align: left;
+  /* padding-top: 50px;
+  padding-left: 30px; */
+  line-height: normal;
+  margin-left:30px;
+  margin-top:60px;
+}
+h3{
+  /* padding-top:0px;
+  padding-left: 30px; */
+  font-family: var(--font3);
+  color: var(--colordark);
+  padding-top: 7px;
+  padding-bottom: 10px;
+  font-size: 19px;
+  font-weight: bold;
+  margin-top:0px;
+}
+#contact-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding-top: 10px;
+  padding-left: 30px; */
+}
+#contact-outer-container{
+  margin:30px;
+}
+
+
+
+/* CONTACT FORM */
+.form-container form{
+  display: grid;
+  grid-template-columns: 50vw;
+  grid-template-rows: repeat(7, 40px) 200px 40px ;
+  grid-row-gap: 7px;
+  padding:10px 45px 30px 30px; /*order: top right bottom left */
+  margin: 60px 1vw 30px 1vw;   /*order: top right bottom left */
+  border-radius: 2px;   /* curved border */
+}
+
+label{
+  font-size: 14px;
+  grid-column: 1/span 1;
+  align-items: start;
+}
+
+/* ALL INPUT FIELDS */
+textarea, input[type=text], input[type=email]{
+    border-radius: 3px;   /* curved border */
+    border: 1px solid var(--colordark);
+    padding: 10px;
+}
+/* hover */
+textarea:hover, input[type=text]:hover, input[type=email]:hover{
+    border: 2px solid var(--color2);
+    transition: all 300ms ease;
+}
+/* onclick & while typing */
+textarea:focus, input[type=text]:focus, input[type=email]:focus{
+    border: 2px solid var(--color1);
+    background-color: var(--transparentcolor1);
+    outline: none;  /* no default blue border when in focus */
+}
+
+
+/* SUBMIT BUTTON */
+input[type=submit]{
+  font-family: var(--font1);
+  background-color:var(--colordark);
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+input[type=submit]:hover, input[type=submit]:focus{
+  background-color: var(--color1);
+  transition: all 300ms ease;
+  outline: none;  /* no default blue border when in focus */
+
+}
+input[type=submit]:active{
+  background-color: var(--color2);
+
+}
+
+/*###################################################################################################################TABLET##############################################################################################################*/
+
+
+@media all and (min-width: 800px){
+
+/* ---------------------------WELCOME TABLET---------------------------------------------------------- */
+
+  .gallery > a{
+    height:150px;
+    width:150px;
+  }
+  .gallery > p{
+    width:150px;
+  }
+
+/* ---------------------------PROCESS TABLET---------------------------------------------------------- */
+
+  /* top container: row */
+.top-flexcontainer{
+    flex-direction: row;
+}
+  /* project title in upper right */
+.projecttitle-after{
+    display: flex;
+    align-self: center;
+    text-align: left;
+}
+.projecttitle-before{
+    display:none;
+}
+.projecttitle-after, #cnbcphone{
+    margin: 30px;
+    width:30%;
+}
+
+/* step content flexed with image */
+.step-flexcontainer{
+    flex-direction: row;
+}
+.stepcontent-before{
+    align-self: center;
+    text-align: left;
+}
+.stepcontent-before{
+  margin: 0px;
+  text-indent: 0px;
+  height:auto;
+  width: auto;
+}
+
+/* STEPS*/
+.container{
+grid-template-columns: 10% 90%;
+}
+.stepcontent{
+  grid-column: 2 /span 1;
+}
+.steptitle{
+  grid-column: 2 / span 1;
+}
+.step-fleximage{
+  grid-column: 2 / span 1;
+}
+/* .stepcontentborder{
+  border: 4px solid var(--transparentcolor2);
+} */
+.step1, .step2, .step3, .step4, .step5, .step6, .step7, .step8{
+  grid-column: 1 / span 1;
+  font-size:20vh;
+  text-align: right;
+}
+
+
+/* -----------------------------ABOUT TABLET------------------------------------------------- */
+
+/* about container: row */
+#about-container{
+    flex-direction: row;
+}
+/* profile pic in upper right */
+#profile-pic-after{
+  display: flex;
+  align-self: flex-start;
+  width:50%;
+}
+#profile-pic-after-img{
+  width:100%;
+}
+/* inherit line height from body so not close together */
+#about-text{
+  line-height: inherit;
+  padding-left:0px;
+}
+/* remove before prof pic */
+#profile-pic-before{
+  display:none;
+}
+#profile-pic-after, #about-text{
+  margin: 30px;
+}
+
+#contact-container{
+  /* display: flex;
+  flex-direction: row;
+  align-items: flex-start; */
+  padding-top: 0px;
+  padding-left: 30px;
+}
+
+#contact-image{
+  display: flex;
+  align-self: flex-start;
+  width:200px;
+  margin-left:30px;
+  margin-top:60px;
+
+}
+
+/* CONTACT FORM */
+.form-container form{
+  grid-template-columns: 100px 250px 13vw 100px;
+  grid-template-rows: repeat(8, 40px);
+  padding:10px 100px 30px 100px;/*order: top right bottom left */
+}
+/* ALL INPUT FIELDS */
+textarea, input[type=text], input[type=email]{
+    margin-top: 5px;
+}
+input[type=text], input[type=email]{
+  grid-column: 2/span 1;
+}
+textarea{
+  grid-column: 2/span 3;
+  grid-row: 4/ span 4;
+}
+
+label{
+  font-size: 14px;
+  grid-column: 1/span 1;
+  text-align: center;
+  align-items: start;
+}
+
+/* SUBMIT BUTTON */
+input[type=submit]{
+  grid-row: 8/span 1;
+  grid-column: 4/ span 1;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+
+
+/*-----NAV& footer tablet---------------------------------------------------------------------------*/
+nav{
+  align-self: center;
+}
+nav{
+padding: 0px;
+/* display:block; */
+margin-right:10px;
+}
+nav ul{
+flex-direction: row;
+}
+nav a{
+font-size:10px;
+}
+
+/* Dropdown */
+#nav > ul > li {
+  display: inline-block;
+  position: relative;
+}
+#nav > ul > li ul {
+  position: absolute;
+  display: none;
+}
+#nav > ul > li:hover ul {
+  display: block;
+}
+
+/* FOOTER */
+.tabletfooter{
+  display: block;
+}
+.mobilefooter, .desktopfooter{
+  display: none;
+}
+
+/* mag */
+
+#tabletmag{
+  display: block;
+}
+#mobilemag, #largedesktopmag, #smalldesktopmag{
+  display: none;
+}
+}
+
+/*################ SMALL DESKTOP#############################################*/
+@media all and (min-width: 1000px){
+
+
+
+/* header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+#inside-header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* rolling logo ANIMATION */
+@-webkit-keyframes roll {
+from {transform:rotate(0deg); left:-999px; top:-15px;}
+to {transform:rotate(1230deg); left:var(--ballstopx); top:-15px;}
+}
+@-moz-keyframes roll {
+  from {transform:rotate(0deg); left:-999px; top:-15px;}
+  to {transform:rotate(1230deg); left:var(--ballstopx); top:-15px;}
+}
+@-o-keyframes roll {
+  from {transform:rotate(0deg); left:-999px; top:-15px;}
+  to {transform:rotate(1230deg); left:var(--ballstopx); top:-15px;}
+}
+@keyframes roll {
+  from {transform:rotate(0deg); left:-999px; top:-15px;}
+  to {transform:rotate(1230deg); left:var(--ballstopx); top:-15px;}
+}
+#logo{
+height: 120px;
+position: relative;
+padding-top: 0px;
+z-index: -1;
+/* first make a NAME for the animation above */
+-webkit-animation-name: roll;
+-moz-animation-name: roll;
+-o-animation-name: roll;
+animation-name: roll;
+/* duration*/
+-webkit-animation-duration: 3s;
+-moz-animation-duration: 3s;
+-o-animation-duration: 3s;
+animation-duration: 3s;
+/* # of times/SO IT DOESNT REPEAT */
+-webkit-animation-iteration-count: 1;
+-moz-animation-iteration-count: 1;
+-o-animation-iteration-count: 1;
+animation-iteration-count: 1;
+/* Stays in final position */
+-webkit-animation-fill-mode: forwards;
+-moz-animation-fill-mode: forwards;
+-o-animation-fill-mode: forwards;
+animation-fill-mode: forwards;
+}
+/* ---------------------------WELCOME DESKTOP---------------------------------------------------------- */
+
+/* GALLERY */
+.gallery > a{
+width: 240px;
+height: 240px;
+}
+
+.gallery a:hover {
+    transition: all 300ms ease;
+    transform: scale(1.02);
+}
+
+.gallery > p{
+/* border: 4px var(--transparentcolor2) solid; */
+color: var(--colordark);   /* for WAVE */
+font-size: 13px;  /* for WAVE */
+text-decoration: none;  /* for WAVE */
+text-align: center;  /* for WAVE */
+margin-right:15px;
+margin-left: 15px;
+margin-top:7px;
+margin-bottom: 35px;
+width: 240px;
+line-height: 1.5;
+align-self: flex-start;
+text-transform: uppercase;
+/* height:100px; */
+}
+
+
+
+/* ---------------------------PROTOTYPE DESKTOP---------------------------------------------------------- */
+/* brainstorming */
+#bs-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#bs-text-before{
+  width:100%;
+  font-size: 13px;
+}
+#bs-pic-after-small{
+  padding-left: 20px;
+  padding-top: 20px;
+  align-self: flex-start;
+  max-height: 200px;
+  width: auto;
+}
+#bs-inner-container1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#bs-inner-container-ft{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+#bs-inner-container2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#bs-pic-after{
+  align-self: center;
+  margin-top: 10px;
+  width: 35vw;
+  height: auto;
+}
+
+
+/* ---------------------------ABOUT DESKTOP---------------------------------------------------------- */
+
+/* ABOUT */
+#about-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#profile-pic-after{
+  align-self: center;
+}
+#about-text{
+  width:100%;
+  font-size: 13px;
+
+}
+
+
+/* ---------------------------NAV & FOOTER---------------------------------------------------------- */
+
+nav{
+/* text-align: right; */
+padding: 10px 0px;
+display:inline-block;
+margin-right:10px;
+}
+nav ul{
+flex-direction: row;
+}
+nav a{
+font-size:1vw;
+}
+/* FOOTER */
+.desktopfooter{
+  display: block;
+}
+.tabletfooter, .mobilefooter{
+  display:none;
+}
+
+/* mag */
+#smalldesktopmag{
+  display: block;
+}
+#tabletmag, #mobilemag, #largedesktopmag{
+  display:none;
+}
+
+}/* closing desktop bracket */
+
+/*################ LARGE DESKTOP#############################################*/
+@media all and (min-width: 1300px){
+
+  .gallery > a{
+  width: 300px;
+  height: 300px;
+  }
+  .gallery > p{
+  width: 300px;
+  }
+
+
+#largedesktopmag{
+  display: block;
+}
+#tabletmag, #mobilemag, #smalldesktopmag{
+  display:none;
+}
+
+/* CONTACT Lg desktop */
+#contact-container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-top: 0px;
+  padding-left: 0px;
+}
+
+#contact-image{
+  display: flex;
+  align-self: flex-start;
+  width:200px;
+  margin-left:30px;
+  margin-top:60px;
+
+}
+/* CONTACT FORM */
+.form-container form{
+  grid-template-columns: 100px 250px 20% 100px;
+
+  grid-template-rows: repeat(8, 40px);
+  padding:10px 100px 30px 100px;/*order: top right bottom left */
+}
+/* email & name FIELDS */
+input[type=text], input[type=email]{
+  grid-column: 2/span 1;
+}
+/* message */
+textarea{
+  grid-column: 2/span 3;
+  grid-row: 4/ span 4;
+}
+
+/* SUBMIT BUTTON */
+input[type=submit]{
+  grid-row: 8/span 1;
+  grid-column: 4/ span 1;
+}
+
+
+
+
+
+
+
+
+
+/* design reqs desktop*/
+#dr-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#dr-pic-before{
+  width:40vw;
+  align-self:center;
+}
+#dr-text-before{
+  width:100%;
+  font-size: 13px;
+  align-self: flex-start;
+}
+
+/* scope desktop*/
+#sc-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#sc-container-col{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#sc-inner-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#sc-pic-before{
+  width:400px;
+  align-self:center;
+}
+.affin-pic-before{
+  width:400px;
+  align-self:center;
+}
+.amz-pic-before{
+  width:500px;
+  align-self:center;
+}
+#sc-text-before{
+  width:100%;
+  align-self: flex-start;
+}
+#bs-inner-container1, #bs-inner-container-ft{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+
+}/* closing large desktop bracket */
+
+/* REDUCE MOTION */
+@media screen and (prefers-reduced-motion: reduce){
+html{
+  scroll-behavior: auto; /* Removes scroll animation */
+}
+.skip a{
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+#logo, #resumelogo{
+  -webkit-animation: none;
+  -moz-animation: none;
+  -o-animation: none;
+  animation: none;
+}
+nav a:hover{
+transition: none;
+}
+.gallery a:hover:nth-child(even), .gallery a:hover:nth-child(odd){
+transition: none;
+}
+.flip-card-inner {
+-webkit-transition: none;
+-moz-transition: none;
+-o-transition: none;
+transition: none;
+}
+
+} /* reduced motion closing bracket */
