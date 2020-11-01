@@ -100,7 +100,7 @@ body{
   background-attachment: fixed; /* Parallax effect */
 }
 .bg-index{
-  background-image: url(../images/pinkwavestripe1.png);
+  background-image: url(../images/pinkwavestripe.png);
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
