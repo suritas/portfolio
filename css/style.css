@@ -671,7 +671,7 @@ justify-content: left;
   font-family: var(--font2);
   font-style: italic;
   font-weight: bold;
-  color: darkgrey;
+  color: gray;
   text-align: center;
   padding-left: 30px;
   padding-top: 20px;
@@ -701,7 +701,7 @@ justify-content: left;
   font-size: 25px;
 }
 #researchq2{
-  color: darkgrey;
+  color: gray;
 }
 
 #feature-title{
@@ -1028,7 +1028,7 @@ backface-visibility: hidden;
 .recco-person{
     font-style: normal;
     font-weight: bold;
-    color: darkgrey;
+    color: gray;
     padding-top:15px;
 }
 #contact-image{
