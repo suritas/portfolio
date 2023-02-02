@@ -514,7 +514,7 @@ margin: 30px;
 .top-description,.top-description-left{
   color: var(--colordark); /* make contrast */
   font-family: var(--font2);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.7em;
   text-align: center;
