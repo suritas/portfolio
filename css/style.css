@@ -588,7 +588,7 @@ justify-content: left;
 }
 
 .bold{
-  font-weight: 800;
+  font-weight: 500;
   color: var(--colordark);
 }
 /* scope*/
