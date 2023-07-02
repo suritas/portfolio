@@ -310,6 +310,7 @@ background-size: cover;       /* Parallax effect */
 }
 .gallery > a{
 border: 4px var(--transparentcolor2) solid;
+border-radius: 10px;
 color: var(--colordark);   /* for WAVE */
 text-decoration: none;  /* for WAVE */
 text-align: center;  /* for WAVE */
