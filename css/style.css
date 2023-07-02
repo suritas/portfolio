@@ -1412,9 +1412,9 @@ color: var(--colordark);   /* for WAVE */
 font-size: 13px;  /* for WAVE */
 text-decoration: none;  /* for WAVE */
 text-align: center;  /* for WAVE */
-margin-right:15px;
-margin-left: 15px;
-margin-top:7px;
+margin-right:35px;
+margin-left:35px;
+margin-top:10px;
 margin-bottom: 35px;
 width: 240px;
 line-height: 1.5;
