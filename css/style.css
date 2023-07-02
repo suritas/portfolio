@@ -238,6 +238,7 @@ text-align: center;
 font-weight: bold;
 /* background-color: var(--transparentcolor2); */
 border: .2px solid var(--transparentcolor2);
+border-radius: 5px;
 /* I removed padding bc otherwise it shifts when hovered */
 /* padding: 4px 9px 4px 9px; */
 }
