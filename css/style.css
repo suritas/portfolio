@@ -221,6 +221,7 @@ nav a:hover, nav a:focus{
   color:white;
   background-color:var(--colordark);
   /* border: 2px solid black; */
+	border-radius: 6px;
   padding: 5px 10px 5px 10px;
   transition: .5s ease-in;
   outline: none; /* no default blue border when in focus */
@@ -238,7 +239,7 @@ text-align: center;
 font-weight: bold;
 /* background-color: var(--transparentcolor2); */
 border: .2px solid var(--transparentcolor2);
-border-radius: 5px;
+border-radius: 6px;
 /* I removed padding bc otherwise it shifts when hovered */
 /* padding: 4px 9px 4px 9px; */
 }
