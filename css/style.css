@@ -194,9 +194,11 @@ main{
   position: relative;
   font-size: 50px;
   text-align: center;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */ /* old */
+  padding: 10px 0px 10px 0px;    /* new 2023*/
   text-decoration: none;
   color:var(--colordark);
+  line-height: 50px; /* new 2023 to prevent nav crush in mobile*/
 }
 
 header{
@@ -254,7 +256,28 @@ border-radius: 6px;
 }
 /* Citation dropdown no float:https://stackoverflow.com/questions/32521032/how-to-create-dropdown-navigationbar-without-float */
 
-
+/* NEW UX TEXT ANIMATION */
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  font-size: 20px;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
 
 /* UX TEXT ANIMATION */
 /* animation: [animation-name] [animation-duration] [animation-timing-function]
@@ -266,13 +289,14 @@ border-radius: 6px;
   text-align: center;
 	justify-content:center;
   align-items: center;
-  font-family: var(--font2);
+  font-family: var(--font3);
   color: var(--color2);
   font-weight: bold;
   font-size: 25px;
   padding-top:50px;
   letter-spacing: 1.7px;
   line-height: 2.2;
+
 }
 .underline{
   text-decoration: underline;
@@ -1143,6 +1167,10 @@ input[type=submit]:active{
     width:150px;
   }
 
+  .typewriter {
+    font-size: 35px;
+  }
+
 /* ---------------------------PROCESS TABLET---------------------------------------------------------- */
 
   /* top container: row */
@@ -1290,7 +1318,7 @@ nav{
 nav{
 padding: 0px;
 /* display:block; */
-margin-right:10px;
+/* margin-right:10px; */
 }
 nav ul{
 flex-direction: row;
@@ -1392,6 +1420,10 @@ animation-fill-mode: forwards;
 }
 /* ---------------------------WELCOME DESKTOP---------------------------------------------------------- */
 
+.typewriter {
+  font-size: 40px;
+}
+
 /* GALLERY */
 .gallery > a{
 width: 240px;
@@ -1485,9 +1517,10 @@ text-transform: uppercase;
 
 nav{
 /* text-align: right; */
-padding: 10px 0px;
+/* padding: 10px 0px; *//* old */
+padding: 20px 0px 10px 0px;
 display:inline-block;
-margin-right:10px;
+/* margin-right:10px; */
 }
 nav ul{
 flex-direction: row;
