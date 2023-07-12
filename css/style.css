@@ -614,6 +614,12 @@ justify-content: left;
   font-weight: 500;
   color: var(--colordark);
 }
+.aboutbold{
+  font-weight: bold;
+}
+.aboutindent{
+  padding-left: 50px;
+}
 /* scope*/
 #sc-container, #sc-inner-container, #bs-inner-container1, #bs-inner-container-ft{
   display: flex;
@@ -1034,7 +1040,7 @@ backface-visibility: hidden;
   display:none;
 }
 .quotes{
-  padding: 50px;
+  padding: 0px;
 }
 .recco-bold, .recco-quote, .recco-person{
   text-align: center;
@@ -1044,7 +1050,7 @@ backface-visibility: hidden;
   font-size: 13px;
 }
 .recco-quote{
-    padding: 80px;
+    padding: 50px;
 }
 .recco-bold{
   font-weight: bold;
@@ -1500,7 +1506,7 @@ text-transform: uppercase;
 /* ---------------------------ABOUT DESKTOP---------------------------------------------------------- */
 
 /* ABOUT */
-#about-container{
+/* #about-container{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1512,7 +1518,7 @@ text-transform: uppercase;
   width:100%;
   font-size: 13px;
 
-}
+} */
 
 
 /* ---------------------------NAV & FOOTER---------------------------------------------------------- */
