@@ -9,7 +9,7 @@
 --lightblue: #60D4E4;
 --darkblue: #52B8BF;
 --transparentcolor1: #99CC331F;
---transparentcolor2: #F9A7647F;
+--transparentcolor2: #F9A76460;
 /* fonts */
 --font1: 'Montserrat', sans-serif;
 --font2: 'Raleway', sans-serif;
@@ -240,7 +240,7 @@ text-align: center;
 .current {
 font-weight: bold;
 /* background-color: var(--transparentcolor2); */
-border: .2px solid var(--transparentcolor2);
+border: .2px solid var(--color2);
 border-radius: 6px;
 /* I removed padding bc otherwise it shifts when hovered */
 /* padding: 4px 9px 4px 9px; */
