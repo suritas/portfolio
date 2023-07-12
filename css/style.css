@@ -1445,8 +1445,8 @@ height: 240px;
 
 .gallery > p{
 /* border: 4px var(--transparentcolor2) solid; */
-color: var(--colordark);   /* for WAVE */
-font-size: 13px;  /* for WAVE */
+color: black;
+font-size: 14.5px;
 text-decoration: none;  /* for WAVE */
 text-align: center;  /* for WAVE */
 margin-right:15px;
